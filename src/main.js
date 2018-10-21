@@ -18,6 +18,8 @@ Vue.use(ElementUI)
 new Vue({
   el: '#app',
   router,
+  //创建组件，
   components: { App },
+  // 组件模板
   template: '<App />'
 })

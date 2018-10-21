@@ -53,7 +53,7 @@
 			}
 		},
 		methods: {
-			login() {
+			login () {
 				this.$refs.form.validate((valid) => {
 					if(valid) {
 						console.log('submit!!');
@@ -64,12 +64,13 @@
 							data: this.form
 						}).then(res => {
 							if(res.data.meta.status === 200) {
-								
 								this.$message.success("登录成功");
+								//存储token
+								localStorage.setItem('loginToken', res.data.data.token)
 								this.$router.push('/Home')
-
+								
 							} else {
-								this.$message.error('用户名或密码错误');
+								this.$message.error('用户名或密码错误')
 
 							}
 						})
